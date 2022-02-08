@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +35,8 @@ Route::get('/posts/{post}', function ($post) {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/blog',[BlogController::class, 'show']);
+Route::get('/dashboard',[DashboardController::class, 'show']);
+Route::get('/faq',[FaqController::class, 'show']);
+Route::get('/profile',[ProfileController::class, 'show']);
