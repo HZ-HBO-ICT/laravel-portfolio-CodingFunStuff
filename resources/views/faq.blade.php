@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -61,104 +62,35 @@
     <!-- Collapse with FAQ questions  -->
     <div class="container" style="padding-top: 50px; padding-bottom: 50px;">
         <div class="panel-group" id="accordion">
+            @foreach($faqs as $faq)
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                            Q: How can you print a document from your laptop at HZ?</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $faq->id }}">
+                            {{$faq->question}}
+                        </a>
                     </h4>
                 </div>
-                <div id="collapse1" class="panel-collapse collapse">
+                <div id="collapse{{ $faq->id }}" class="panel-collapse collapse">
                     <div class="panel-body">
                         <div class="card-body">
-                            <p class="card-text">A: You can print a document by going to: <b>'print.hz.nl'</b>. Here you
-                                should
-                                log
-                                in with your HZ account, then select a document and printer, and your document is ready
-                                to be
-                                collected
-                                at the selected printer!</p>
+                            <p class="card-text">
+                                {{$faq->answer}}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            Q: How can you scan a document a send it to your laptop at HZ?</a>
-                    </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div class="card-body">
-                            <p class="card-text">A: We can use one of the printers with scanner. Then, scan your paper
-                                correctly
-                                and it will added to your laptop</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                            Q: What do you need to do when you are sick/show symptoms of coronavirus?</a>
-                    </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div class="card-body">
-                            <p class="card-text">A: We need to contact our teacher or helpdesk at school. We have to
-                                stay at
-                                home
-                                and join the online class to compensate
-                                for unusual sickness.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                            Q: How can you book a project space in one of the wings?</a>
-                    </h4>
-                </div>
-                <div id="collapse4" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div class="card-body">
-                            <p class="card-text">A: Login via Selfservice Portal and then we need to book a room on the
-                                HZ page.
-                                We
-                                need to follow the instructions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                            Q: What are the instructions if you want to park your car at the HZ parking lot?</a>
-                    </h4>
-                </div>
-                <div id="collapse5" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div class="card-body">
-                            <p class="card-text">A: We must park our car at the parking lot of the former PEZM.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse20">
                             Relevant and useful links to other websites!</a>
                     </h4>
                 </div>
-                <div id="collapse6" class="panel-collapse collapse">
+                <div id="collapse20" class="panel-collapse collapse">
                     <div class="panel-body">
                         <div class="card-body">
                             <p class="card-text">

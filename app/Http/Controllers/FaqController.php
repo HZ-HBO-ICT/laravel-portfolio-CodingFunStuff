@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 class FaqController
 {
     /*
@@ -9,6 +11,10 @@ class FaqController
      */
     public function show()
     {
-        return view('faq');
+        $faqs = DB::table('faqs')->get();
+
+        return view('faq', [
+            'faqs' => $faqs
+        ]);
     }
 }
